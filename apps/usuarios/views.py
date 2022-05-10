@@ -59,7 +59,7 @@ def logout(request):
 def dashboard(request):
     if request.user.is_authenticated:
         id = request.user.id
-        receita = Receita.objects.order_by('-date_receita').filter(pessoa=id)
+        receita = Receita.objects.order_by('date_receita').filter(pessoa=id)
 
         dados = {
             'receitas' : receita
